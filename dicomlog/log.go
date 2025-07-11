@@ -29,3 +29,10 @@ func Vprintf(l int, format string, args ...interface{}) {
 		log.Printf(format, args...)
 	}
 }
+
+// Vprint is shorthand for "if level > Level { log.Print(...) }".
+func Vprint(l int, message string) {
+	if Level() >= l {
+		log.Print(message)
+	}
+}
